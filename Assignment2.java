@@ -8,7 +8,7 @@ import org.openqa.selenium.Keys;
 public class Assignment2 {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/angularpractice/");
@@ -32,15 +32,14 @@ public class Assignment2 {
 		driver.findElement(By.xpath("//input[@type='date' and @name='bday']")).sendKeys("1974");
 
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//h4//input")).sendKeys(
-				"Hi!! Rahul Shetty My name is Farhan Aktar, I want to learn Protractor Please meet My Mumbai Film studio!!!");
+		driver.findElement(By.xpath("//h4//input")).sendKeys("Hi!!");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@value='Submit']")).click();
 		Thread.sleep(1000);
 		System.out.println(
 				driver.findElement(By.cssSelector("div[class='alert alert-success alert-dismissible']")).getText());
 		String y = driver.findElement(By.cssSelector("div[class='alert alert-success alert-dismissible']")).getText();
-		Assert.assertEquals(y, "×" + "\n" + "Success! The Form has been submitted successfully!.");
+		Assert.assertEquals(y, "Ã—" + "\n" + "Success! The Form has been submitted successfully!.");
 	}
 
 }
